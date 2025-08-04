@@ -350,3 +350,8 @@ main {
     border-radius: 10px;
   }
 }
+
+.music-box iframe,
+.music-box iframe:hover {
+  cursor: url('cursor.cur'), auto !important;
+}
