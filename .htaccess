@@ -1,0 +1,12 @@
+RewriteEngine On
+
+RewriteRule ^007/?$ /007.html [L]
+
+Header set X-Content-Type-Options "nosniff"
+Header set X-Frame-Options "DENY"
+Header set Referrer-Policy "no-referrer-when-downgrade"
+Header set Content-Security-Policy "default-src 'self'; script-src 'self' https://api.lanyard.rest; connect-src https://api.lanyard.rest wss://api.lanyard.rest; img-src 'self' https://cdn.discordapp.com data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; media-src 'self';"
+
+<FilesMatch "\.(jpg|jpeg|png|gif|ico|cur|mp4|mp3|css|js)$">
+  Header set Cache-Control "max-age=31536000, public"
+</FilesMatch>
