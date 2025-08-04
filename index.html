@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<<<<<<< HEAD
 <html>
   <head>
     <meta http-equiv="refresh" content="0; url=007.html" />
@@ -9,3 +10,221 @@
     If you're not redirected, <a href="007.html">click here</a>.
   </body>
 </html>
+=======
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>007</title>
+
+  <meta name="description" content="Personal bio website of 0x007 – coder, gamer, creator. Connect on Discord, Roblox, GitHub, and more." />
+  <meta property="og:title" content="0x007 | gooner.lol/007" />
+  <meta property="og:description" content="Personal bio website of 0x007 – coder, gamer, creator." />
+  <meta property="og:image" content="public/song-art.jpg" />
+  <meta property="og:url" content="https://gooner.lol/007" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="stylesheet" href="public/style.css" />
+  <link rel="icon" href="public/favicon.ico" />
+
+  <style>
+
+    .music-box {
+      margin: 2rem auto;
+      width: 320px;
+      border: 1px solid cyan;
+      border-radius: 16px;
+      padding: 1rem;
+      backdrop-filter: blur(6px);
+      box-shadow: 0 0 15px cyan;
+      background: rgba(0, 255, 255, 0.05);
+    }
+
+    .music-box iframe {
+      border-radius: 12px;
+      width: 100%;
+      height: 80px;
+      border: none;
+    }
+
+    @media (max-width: 400px) {
+      .music-box {
+        width: 95%;
+        padding: 0.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="preloader">
+    <div class="spinner"></div>
+  </div>
+
+  <video autoplay muted loop id="bg-video" playsinline>
+    <source src="public/video-bg.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+
+  <audio autoplay loop id="bg-music">
+    <source src="public/song.mp3" type="audio/mp3" />
+  </audio>
+
+  <button id="dark-mode-toggle" aria-label="Toggle Dark Mode">🌙</button>
+
+  <main class="fade-in">
+    <h1 class="name">0x007</h1>
+    <p class="tagline" id="typewriter"></p>
+    <p class="description">professional pussy eater</p>
+
+    <div class="links">
+      <a href="https://www.roblox.com/users/9061799674/profile" target="_blank" class="btn" aria-label="Roblox Profile">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="social-icon">
+          <path d="M12 0L1 6v12l11 6 11-6V6z"/>
+        </svg>
+        Roblox
+      </a>
+      <a href="https://discord.com/users/1380290283639541892" target="_blank" class="btn" aria-label="Discord Profile">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 245 240" fill="currentColor" class="social-icon">
+          <path d="M104.4 108.8c-5.7 0-10.2 5-10.2 11.1s4.6 11.1 10.2 11.1c5.7 0 10.3-5 10.2-11.1 0-6.2-4.6-11.1-10.2-11.1zm36.2 0c-5.7 0-10.2 5-10.2 11.1s4.6 11.1 10.2 11.1c5.7 0 10.3-5 10.2-11.1-.1-6.2-4.6-11.1-10.2-11.1z"/>
+          <path d="M189.5 20h-134C39.6 20 30 29.7 30 42v128c0 12.3 9.6 22 21.5 22h105.5l-5-17 12 11 11 10 20 18V42c0-12.3-9.6-22-21.5-22zM164 157s-6.8-8.1-12.5-15.2c24.8-7.1 34.1-22.5 34.1-22.5-7.7 5.2-15 8.9-21.5 11.5-9.3 4-18.2 6.6-27 8-11.3 1.9-21.7 1.5-30.9-.1-6.7-1.2-12.5-2.9-17.4-4.6-0.8-0.3-1.6-0.5-2.4-0.8-0.2-0.1-0.4-0.1-0.5-0.2-0.1 0-0.1 0-0.2-0.1-0.7-0.2-1.1-0.3-1.1-0.3s9 15.2 32.5 22.7c-5.7 7-12.7 15.4-12.7 15.4-42.1-2-58-29-58-29 0-61.4 27.5-111.2 27.5-111.2 27.5-20.6 53.6-20 53.6-20l2 2.3c-34.4 9.9-50.3 24.8-50.3 24.8s4.2-2.3 11.3-5.4c20.6-8.7 37-11 43.8-11.6 1 0 1.9-0.1 2.9-0.1 0.9 0 1.8 0 2.7 0.1 6.7 0.6 23.1 2.9 43.7 11.6 7 3.1 11.2 5.4 11.2 5.4s-15.6-15.1-49.9-24.8l2.8-3.2s26.2-0.6 53.6 20c0 0 27.5 49.8 27.5 111.2 0 0-15.8 27-58 29z"/>
+        </svg>
+        Discord
+      </a>
+      <a href="https://github.com/007ud" target="_blank" class="btn" aria-label="GitHub Profile">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="social-icon">
+          <path d="M12 0C5.4 0 0 5.4 0 12c0 5.3 3.4 9.8 8.2 11.4.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.5-1.8-1.5-1.8-1.2-.8.1-.8.1-.8 1.3.1 2 1.4 2 1.4 1.2 2 3 1.4 3.7 1.1.1-.9.5-1.4.9-1.7-2.6-.3-5.3-1.3-5.3-5.8 0-1.3.5-2.4 1.3-3.2-.1-.3-.6-1.5.1-3.2 0 0 1-.3 3.3 1.3.9-.3 1.8-.4 2.7-.4s1.8.1 2.7.4c2.3-1.6 3.3-1.3 3.3-1.3.7 1.7.2 2.9.1 3.2.8.8 1.3 1.9 1.3 3.2 0 4.5-2.7 5.5-5.3 5.8.5.4 1 .9 1 1.9v2.8c0 .3.2.7.8.6C20.6 21.8 24 17.3 24 12c0-6.6-5.4-12-12-12z"/>
+        </svg>
+        GitHub
+      </a>
+    </div>
+
+    <div class="discord-box fade-in" aria-live="polite">
+      <img id="discord-pfp" class="discord-pfp" src="" alt="Discord Avatar" />
+      <div class="discord-info">
+        <h2 id="discord-username">@loading...</h2>
+        <p id="discord-status">Fetching status...</p>
+        <p id="discord-activity"></p>
+        <p id="discord-spotify"></p>
+      </div>
+    </div>
+
+    <div class="music-box fade-in" aria-label="Spotify Music Embed" style="max-width: 320px; margin: 2rem auto;">
+  <iframe
+    src="https://open.spotify.com/embed/track/11ff9MexjKHF7Uq1EyhapK?utm_source=generator"
+    width="100%"
+    height="80"
+    frameborder="0"
+    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+    loading="lazy"
+    style="border-radius: 12px;"
+    title="Spotify Music Player"
+  ></iframe>
+</div>
+
+
+  <script>
+    window.addEventListener('load', () => {
+      const preloader = document.getElementById('preloader');
+      preloader.style.opacity = '0';
+      setTimeout(() => preloader.style.display = 'none', 600);
+    });
+
+    const phrases = [
+      "No one checks on the quiet ones.",
+      "You ever feel like you don’t belong anywhere?",
+      "Some days I just disappear in silence.",
+      "I smile so I don’t scream.",
+      "Reality hit harder than I thought.",
+      "Built to feel nothing.",
+      "Online doesn't mean okay.",
+      "Living in DND mode.",
+      "I'm not cold, just tired of being warm for people who don't care.",
+      "Behind the screen, it's quieter.",
+      "Typing ‘lol’ while dying inside.",
+      "I leave before I’m left.",
+      "This is all I have — pixels and pain.",
+      "Not broken. Just tired of trying.",
+      "If you see this, I’m still breathing.",
+      "Discord is open, but I’m not.",
+    ];
+    const typeEl = document.getElementById("typewriter");
+    let idx = 0, pos = 0, rev = false;
+    function type() {
+      const text = phrases[idx];
+      typeEl.textContent = text.substring(0, pos);
+      pos += rev ? -1 : 1;
+      if (pos === text.length + 1 || pos === 0) {
+        rev = !rev;
+        if (!rev) idx = (idx + 1) % phrases.length;
+      }
+      setTimeout(type, rev ? 50 : 150);
+    }
+    type();
+
+    const discordId = "1380290283639541892";
+    const ws = new WebSocket("wss://api.lanyard.rest/socket");
+    ws.onopen = () => {
+      ws.send(JSON.stringify({ op: 2, d: { subscribe_to_id: discordId } }));
+    };
+    ws.onmessage = (evt) => {
+      const msg = JSON.parse(evt.data);
+      if (!["INIT_STATE", "PRESENCE_UPDATE"].includes(msg.t)) return;
+
+      const d = msg.d;
+      const user = d.discord_user;
+
+      const avatarURL = user.avatar
+        ? `https://cdn.discordapp.com/avatars/${user.id}/${user.avatar}.webp`
+        : "https://cdn.discordapp.com/embed/avatars/0.png";
+      document.getElementById("discord-pfp").src = avatarURL;
+
+      const displayName = user.global_name || user.username;
+      document.getElementById("discord-username").textContent = `@${displayName}`;
+
+      const statusMap = {
+        online: "🟢 Online",
+        dnd: "⛔ Do Not Disturb",
+        idle: "🌙 Idle",
+        offline: "⚫ Offline"
+      };
+      const statusText = statusMap[d.discord_status] || "⚪ Unknown";
+      document.getElementById("discord-status").textContent = statusText;
+
+      const customActivity = d.activities?.find(a => a.type === 4);
+      document.getElementById("discord-activity").textContent = customActivity
+        ? `💬 ${customActivity.state}` : "";
+
+      document.getElementById("discord-spotify").textContent = d.spotify
+        ? `🎵 ${d.spotify.song} by ${d.spotify.artist}` : "";
+    };
+
+
+    const darkToggle = document.getElementById('dark-mode-toggle');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    function setDarkMode(on) {
+      if (on) {
+        document.body.classList.add('dark-mode');
+        darkToggle.textContent = '☀️';
+      } else {
+        document.body.classList.remove('dark-mode');
+        darkToggle.textContent = '🌙';
+      }
+    }
+
+    const savedMode = localStorage.getItem('dark-mode');
+    if (savedMode !== null) {
+      setDarkMode(savedMode === 'true');
+    } else {
+      setDarkMode(prefersDark);
+    }
+
+    darkToggle.addEventListener('click', () => {
+      const isDark = document.body.classList.contains('dark-mode');
+      setDarkMode(!isDark);
+      localStorage.setItem('dark-mode', !isDark);
+    });
+  </script>
+</body>
+</html>
+>>>>>>> 115334d1f43dd458a965c2eed8a1b142ed1dff0b
