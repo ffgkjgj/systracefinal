@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>007</title>
 
   <meta name="description" content="007" />
@@ -14,6 +14,7 @@
 
   <link rel="stylesheet" href="public/style.css" />
   <link rel="icon" href="public/favicon.ico" />
+  <link rel="canonical" href="https://systrace.tech/007.html" />
 
   <style>
 
@@ -41,12 +42,49 @@
         padding: 0.5rem;
       }
     }
+
+    #boot-overlay {
+      position: fixed;
+      inset: 0;
+      background: black;
+      color: #00ffcc;
+      font-family: monospace;
+      font-size: 1rem;
+      padding: 2rem;
+      z-index: 99999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: bootFade 6s ease forwards;
+    }
+
+    .boot-text {
+      text-align: left;
+      white-space: pre-wrap;
+      animation: typing 3s steps(40) 1;
+      max-width: 90%;
+    }
+
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+
+    @keyframes bootFade {
+      0% { opacity: 1 }
+      90% { opacity: 1 }
+      100% { opacity: 0; visibility: hidden; display: none }
+    }
   </style>
 </head>
 <body>
-  <div id="preloader">
-    <div class="spinner"></div>
-  </div>
+  <div id="boot-overlay">
+  <pre class="boot-text" id="boot-text"></pre>
+</div>
+
+<div id="preloader">
+  <div class="spinner"></div>
+</div>
 
   <video autoplay muted loop id="bg-video" playsinline>
     <source src="/video-bg.mp4" type="video/mp4" />
@@ -125,11 +163,61 @@
   </footer>
 
 <script>
-    window.addEventListener('load', () => {
-      const preloader = document.getElementById('preloader');
-      preloader.style.opacity = '0';
-      setTimeout(() => preloader.style.display = 'none', 600);
-    });
+  const bootOverlay = document.getElementById("boot-overlay");
+  const bootTextEl = document.getElementById("boot-text");
+
+  const bootLines = [
+    "Initalizing system...",
+    "Loading user profile [0x007]...",
+    "Authenticating...",
+    "Connection established.",
+    "Welcome back, Agent."
+  ];
+
+  const typingSpeed = 25;
+  const lineDelay = 400;
+
+  let currentLineIndex = 0;
+  let currentCharIndex = 0;
+  let displayedText = "";
+
+  function typeNextChar() {
+    if (currentLineIndex >= bootLines.length) {
+      bootOverlay.style.transition = "opacity 2s ease";
+      bootOverlay.style.opacity = "0";
+
+      setTimeout(() => {
+        bootOverlay.style.display = "none";
+        document.body.classList.add("boot-complete");
+
+        const preloader = document.getElementById("preloader");
+  if (preloader) {
+    preloader.style.opacity = "0";
+    setTimeout(() => {
+      preloader.style.display = "none";
+    }, 600);
+  }
+      }, 2000);
+
+      return;
+    }
+
+    const currentLine = bootLines[currentLineIndex];
+    if (currentCharIndex < currentLine.length) {
+      displayedText += currentLine.charAt(currentCharIndex);
+      bootTextEl.textContent = displayedText + "_";
+      currentCharIndex++;
+      setTimeout(typeNextChar, typingSpeed);
+    } else {
+      displayedText += "\n";
+      bootTextEl.textContent = displayedText;
+      currentLineIndex++;
+      currentCharIndex = 0;
+      setTimeout(typeNextChar, lineDelay);
+    }
+  }
+
+  typeNextChar();
 
     const phrases = [
       "No one checks on the quiet ones.",
@@ -159,7 +247,7 @@
         rev = !rev;
         if (!rev) idx = (idx + 1) % phrases.length;
       }
-      setTimeout(type, rev ? 50 : 150);
+      setTimeout(type, rev ? 35 : 90);
     }
     type();
 
